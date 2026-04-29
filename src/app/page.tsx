@@ -1,7 +1,12 @@
+import React from "react";
+import Hero from "@/components/Hero";
+import PopularCourses from "@/components/PopularCourses";
+
 export default function Home() {
   return (
-    <main>
-      <div>Hello world!</div>
-    </main>
+    <div className="flex flex-col pb-16">
+      <Hero />
+      <PopularCourses />
+    </div>
   );
 }
