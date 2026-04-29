@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 export default function Navbar() {
   const router = useRouter();
@@ -12,6 +13,7 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     await authClient.signOut();
+    toast.success("Logged out successfully!");
     router.refresh();
   };
 
