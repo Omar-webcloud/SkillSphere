@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import courses from "@/data/courses.json";
 
 export default function PopularCourses() {
@@ -40,12 +41,12 @@ export default function PopularCourses() {
                 <span className="font-semibold">{course.rating}</span>
               </div>
               <div className="card-actions justify-end mt-4">
-                <button className="btn btn-outline btn-primary w-full group">
+                <Link href={`/courses/${course.id}`} className="btn btn-outline btn-primary w-full group">
                   View Details
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
