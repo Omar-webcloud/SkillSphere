@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "react-toastify";
@@ -37,7 +37,7 @@ export default function Navbar() {
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost hover:bg-transparent px-1 sm:px-2">
-          <img src="/logo.png" alt="SkillSphere" className="h-8 sm:h-9 md:h-11 lg:h-12 object-contain" />
+          <Image src="/logo.png" alt="SkillSphere" width={48} height={48} className="h-8 sm:h-9 md:h-11 lg:h-12 w-auto object-contain" />
         </Link>
       </div>
 
@@ -51,10 +51,12 @@ export default function Navbar() {
         {isLoggedIn ? (
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ring-2 ring-primary ring-offset-base-100 ring-offset-2">
-              <div className="w-9 sm:w-10 rounded-full">
-                <img
+              <div className="w-9 sm:w-10 rounded-full relative">
+                <Image
                   alt="User Avatar"
                   src={session?.user?.image || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -71,7 +73,9 @@ export default function Navbar() {
                   Profile
                 </Link>
               </li>
-              <li><a>Settings</a></li>
+              <li>
+                <Link href="/settings">Settings</Link>
+              </li>
               <li>
                 <button onClick={handleLogout} className="text-error w-full text-left">Logout</button>
               </li>
