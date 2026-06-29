@@ -1,4 +1,4 @@
-# SkillSphere
+# Skill Sphere
 
 A modern online learning platform designed to help discover and master new skills with ease. This platform features a premium user interface with smooth transitions and a seamless authentication experience.
 
